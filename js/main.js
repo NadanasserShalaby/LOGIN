@@ -15,9 +15,9 @@ console.log(pathUrl);
 
 // to say welcome in home page
 var username = localStorage.getItem('userName')
-// if (username) {
-//     document.getElementById('userName').innerHTML = username
-// }
+if (username) {
+    document.getElementById('userName').innerHTML = username
+}
 var signContainer = [];
 
 if (localStorage.getItem("user") !== null) {
