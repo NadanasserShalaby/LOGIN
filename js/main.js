@@ -174,7 +174,7 @@ function demo(pvalue) {
     }
 }
 // email
-var pNameRegex_2 = /[@].+[.].+/;
+var pNameRegex_2 = /.+[@].+[.].+/;
 function demo2(pvalue) {
     if (pNameRegex_2.test(pvalue)) {
         signEmail.classList.add("is-valid");
