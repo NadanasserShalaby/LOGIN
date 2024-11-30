@@ -22,6 +22,7 @@
                 class="form-control bg-transparent text-white"
                 id="Name"
                 placeholder="Enter your name"
+                oninput="demo(this.value)"
               />
             </div>
             <div class="mb-3">
@@ -31,6 +32,8 @@
                 id="Email"
                 aria-describedby="emailHelp"
                 placeholder="Enter your Email"
+
+                oninput="demo2(this.value)"
               />
             </div>
             <div class="mb-3">
@@ -39,6 +42,7 @@
                 class="form-control"
                 id="Password"
                 placeholder="Enter your PassWord"
+                oninput="demo3(this.value)"
               />
             </div>
             <p id="exist" class=" py-2"></p>
