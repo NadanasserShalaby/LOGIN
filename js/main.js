@@ -33,13 +33,14 @@ function signUp() {
     }
     // check empety
     if (isEmpty() == false) {
-        document.getElementById("exist").innerHTML = "All Inputs is Required";
+          
+        document.getElementById("exist").innerHTML = '<span class="text-danger ">All inputs is required</span>';
         clearFormSign();
         return false;
     }
     // check Email
     if (isEmailExist() == false) {
-        document.getElementById("exist").innerHTML = "Email Already Exists";
+        document.getElementById("exist").innerHTML = '<span class="text-danger ">Email Already Exists</span>';
         // clearFormSign() ;
         return false;
     }
@@ -49,7 +50,7 @@ function signUp() {
         console.log(signContainer.length);
         
         localStorage.setItem("user", JSON.stringify(signContainer));
-        document.getElementById("exist").innerHTML = "Success";
+        document.getElementById("exist").innerHTML =  '<span class="text-success m-3">Success</span>';
         clearFormSign();
     }
 
@@ -98,7 +99,7 @@ function isEmptyLogin() {
 // login
 function login() {
     if (isEmptyLogin() == false) {
-        document.getElementById("correct").innerHTML = "All Inputs is Required";
+        document.getElementById("correct").innerHTML ='<span class="text-danger ">All inputs is required</span>';
         clearFormLogin();
         return false;
     }
@@ -108,7 +109,7 @@ function login() {
     var logPass = loginPassword.value;
     var logEmail = loginEmail.value;
     if(signContainer.length == 0){
-        document.getElementById("correct").innerHTML = "Don`t Have an account ,please Sign up";
+        document.getElementById("correct").innerHTML = '<span class="text-danger ">Don`t Have an account ,please Sign up</span>';
 
     }
     for (var i = 0; i < signContainer.length; i++) {
@@ -122,7 +123,7 @@ function login() {
         else {
             console.log("incrroct");
 
-            document.getElementById("correct").innerHTML = "Incorrect Email or Password";
+            document.getElementById("correct").innerHTML = '<span class="text-danger ">"Incorrect Email or Password"</span>';
         }
     }
 }
