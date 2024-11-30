@@ -13,17 +13,11 @@ for (var i = 0; i < path.length - 1; i++) {
 }
 console.log(pathUrl);
 
-var username = [];
-
-if (localStorage.getItem('userName') !== null) {
-    username = localStorage.getItem('userName');
+// to say welcome in home page
+var username = localStorage.getItem('userName')
+if (username) {
+    document.getElementById('userName').innerHTML =  username
 }
-
-
-// if (username) {
-//     document.getElementById("userName").innerHTML = "userName" + username;
-// }
-
 var signContainer = [];
 
 if (localStorage.getItem("user") !== null) {
@@ -43,12 +37,6 @@ function signUp() {
         clearFormSign();
         return false;
     }
-    // if (signContainer.length ==0 ){
-    //     signContainer.push(signUp);
-    //     localStorage.setItem("user",JSON.stringify(signContainer));
-    //     document.getElementById("exist").innerHTML = "Success Sign";
-
-    // }
     // check Email
     if (isEmailExist() == false) {
         document.getElementById("exist").innerHTML = "Email Already Exists";
@@ -64,8 +52,6 @@ function signUp() {
         document.getElementById("exist").innerHTML = "Success";
         clearFormSign();
     }
-
-    // console.log(signContainer.length);
 
 }
 
@@ -108,7 +94,6 @@ function isEmptyLogin() {
         return true;
     }
 }
-// console.log(signContainer.length);
 
 // login
 function login() {
@@ -133,17 +118,6 @@ function login() {
 
             localStorage.setItem("userName", signContainer[i].name);
             window.location.href = 'login.html';
-            // if (pathUrl == '/') {
-            //     console.log("Entered path");
-
-            //     // location.replace('https://' + location.hostname + '/login.html');
-            //     location.replace('https://' + location.hostname + '/login.html')
-            // }
-            // else {
-            //     console.log("Entered url");
-
-            //     location.replace(pathUrl + '/login.html');
-            // }
         }
         else {
             console.log("incrroct");
